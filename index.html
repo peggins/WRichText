@@ -4,11 +4,86 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="João L." />
-        <meta name="description" content="Text editor with rich-text formatting" />
-        <title>WRichText</title>
+        <meta name="description" content="Web Text editor with rich-text formatting" />
+        <meta name="keywords" content="text editor, editor web, web editor, rich-text" />
+        <title>WRich-Text</title>
+        <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/layout.css" type="text/css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
-    <body></body>
+    <body>
+        <div class="wrichtext_container">
+            <div class="wrichtext_header">
+                <input class="wrichtext_filename" type="text" placeholder="Title e.g.: Document created with WRich-Text" />
+                <div class="wrichtext_actions">
+                    <div class="wrichtext_action_formatting">
+                        <button class="wrichtext_btn_action">
+                           <abbr title="Bold">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-bold"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 5h6a3.5 3.5 0 0 1 0 7h-6z" /><path d="M13 12h1a3.5 3.5 0 0 1 0 7h-7v-7" /></svg>
+                            </abbr>
+                        </button>
+                        <button class="wrichtext_btn_action">
+                            <abbr title="Italic">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-italic"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 5l6 0" /><path d="M7 19l6 0" /><path d="M14 5l-4 14" /></svg>
+                            </abbr>
+                        </button>
+                        <button class="wrichtext_btn_action">
+                            <abbr title="Underline">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-underline"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 5v5a5 5 0 0 0 10 0v-5" /><path d="M5 19h14" /></svg>
+                            </abbr>
+                        </button>
+                        <button class="wrichtext_btn_action">
+                            <abbr title="Link a page">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
+                            </abbr>
+                        </button>
+                    </div>
+                    <div class="wrichtext_action_extra">
+                        <button class="wrichtext_btn_action">
+                            <abbr title="Download File">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-cloud-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 18.004h-5.343c-2.572 -.004 -4.657 -2.011 -4.657 -4.487c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.38 0 2.573 .813 3.13 1.99" /><path d="M19 16v6" /><path d="M22 19l-3 3l-3 -3" /></svg>
+                            </abbr>
+                        </button>
+                        <button class="wrichtext_btn_action">
+                            <abbr title="History Notes">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-history"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8l0 4l2 2" /><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg>
+                            </abbr>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="wrichtext_main">
+                <textarea 
+                    name="wrich-content"
+                    id="wrich-text-area"
+                    class="wrichtext_content_area"
+                    cols="30"
+                    rows="30"
+                    placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
+                ></textarea>
+            </div>
+            <div class="wrichtext_helper">
+                <section class="wrichtext_helper_sc">
+                    <h1>WRich-Text: Web Text editor with rich-text formatting</h1>
+                    <p>
+                        This is a free, open-source project. A simple web project in the form of a text editor with RIch-Text style formatting. The project can be installed on your machine by accessing the project's official repository (<a href="https://github.com/peggins/WRichText" target="_blank">just click here</a>). Below you will see a brief list of the formatting styles we currently have.
+                    </p>
+                    <ul>
+                        <li>Link</li>
+                        <li>Bold</li>
+                        <li>Italic</li>
+                        <li>Underline</li>
+                    </ul>
+                </section>
+                <section class="wrichtext_helper_sc">
+                    <h1>Why use WRich-Text?</h1>
+                    <p>
+                        One of the main reasons for using WRich-Text is that it's easy to access via the Internet, and can be used on both computers and mobile devices. You'd also like to use it because it doesn't require you to install any packages on your operating system, your browser will take care of everything for you. Another highlight is its lightness - by using primary technologies and without a ready-made structure or too many libraries to cause bloat in the application, you enjoy a simple, light and straightforward application.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </body>
 </html>
